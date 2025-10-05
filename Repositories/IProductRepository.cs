@@ -5,7 +5,7 @@ namespace AspNetCoreWebAPIRepositoryPattern.Repositories
     public interface IProductRepository
     {
         Task<IEnumerable<ProductDto>> GetAllProductsAsync();
-        Task<IEnumerable<ProductDtoV2>> GetAllProductsV2Async();
+        Task<IEnumerable<ProductDto>> GetAllProductsV2Async();
         Task<ProductDto> GetProductByIdAsync(int id);
         Task<ProductDto> CreateProductAsync(ProductDto product);
         Task UpdateProductAsync(ProductDto product);

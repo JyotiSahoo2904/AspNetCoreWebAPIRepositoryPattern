@@ -36,9 +36,9 @@ namespace AspNetCoreWebAPIRepositoryPattern.Repositories
             return ProductDtos;
         }
 
-        public async Task<IEnumerable<ProductDtoV2>> GetAllProductsV2Async()
+        public async Task<IEnumerable<ProductDto>> GetAllProductsV2Async()
         {
-            var ProductDtosV2 = await _context.Products.Where(p => p.Version == "2").Select(p => new ProductDtoV2
+            var ProductDtos = await _context.Products.Where(p => p.Version == "2").Select(p => new ProductDto
             {
                 Id = p.Id,
                 Name = p.Name,
@@ -46,7 +46,7 @@ namespace AspNetCoreWebAPIRepositoryPattern.Repositories
                 Description = p.Description
 
             }).ToArrayAsync();
-            return ProductDtosV2;
+            return ProductDtos;
         }
 
 
